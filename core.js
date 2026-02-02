@@ -341,5 +341,36 @@ function renderPerks(){
 function renderAll(){
   renderPerks();
 }
+/* ================= BUILD SUBTABS ================= */
+
+function initBuildSubTabs(){
+
+  const subTabs = document.querySelectorAll('.subtab');
+
+  const subPanels = {
+    identity: document.getElementById('build-identity'),
+    race: document.getElementById('build-race'),
+    special: document.getElementById('build-special'),
+    skills: document.getElementById('build-skills'),
+    perks: document.getElementById('build-perks')
+  };
+
+  subTabs.forEach(btn => {
+
+    btn.addEventListener('click', () => {
+
+      const target = btn.dataset.subtab;
+
+      subTabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      Object.keys(subPanels).forEach(k => {
+        subPanels[k]?.classList.toggle('active', k === target);
+      });
+
+    });
+
+  });
+}
 
 export { renderAll };
