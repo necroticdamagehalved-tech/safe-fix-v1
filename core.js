@@ -1032,7 +1032,7 @@ function renderPerks(){
     }
   }
 
-  );
+  ;
     }
   }
 
