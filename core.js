@@ -1029,12 +1029,4 @@ function renderPerks(){
         const tile = renderPerkTile(perk, overspent, isPickLevel, remaining);
         stealthBody.appendChild(tile);
       });
-    }
-  }
-
-  ;
-    }
-  }
-
-
-}
+   
