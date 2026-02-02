@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fallout Character Builder</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="title">Fallout Builder <span class="buildtag">v1.4c</span></div>
+  <nav id="tabs">
+    <button data-tab="build" class="tab active">BUILD</button>
+    <button data-tab="sheet" class="tab">SHEET</button>
+    <button data-tab="inventory" class="tab">INVENTORY</button>
+    <button data-tab="rules" class="tab">RULES</button>
+  </nav>
+</header>
+
+<main id="app">
+<section id="build" class="panel active">
+  <div class="subtabs">
+    <button data-subtab="identity" class="subtab active">IDENTITY</button>
+    <button data-subtab="race" class="subtab">RACE</button>
+    <button data-subtab="special" class="subtab">SPECIAL</button>
+    <button data-subtab="skills" class="subtab">SKILLS</button>
+    <button data-subtab="perks" class="subtab">PERKS</button>
+  </div>
+
+  <div id="build-identity" class="subpanel active">
+    <h1>Identity</h1>
+    <div class="form-grid">
+      <label>Name
+        <input id="nameInput" type="text" placeholder="Character name">
+      </label>
+      <label>Level (creation)
+        <input id="levelInput" type="number" min="1" value="1">
+      </label>
+      <label>Age
+        <input id="ageInput" type="number" placeholder="Optional">
+      </label>
+      <label>Gender
+        <input id="genderInput" type="text" placeholder="Optional">
+      </label>
+      <label class="full">Background
+        <textarea id="bgInput" rows="6" placeholder="A few lines about who they are..."></textarea>
+      </label>
+    </div>
+  </div>
+
+  <div id="build-race" class="subpanel">
+    <h1>Race</h1>
+    <div class="race-layout">
+      <div class="race-list" id="raceList"></div>
+
+      <div class="race-detail">
+        <div class="race-summary">
+          <div><strong>Selected Race:</strong> <span id="raceName">None</span></div>
+          <div class="race-stats">
+            <div><strong>HP Base:</strong> <span id="raceHpBase">—</span></div>
+            <div><strong>DR Base:</strong> <span id="raceDrBase">—</span></div>
+          </div>
+        </div>
+
+        <div class="box">
+          <strong>Race Traits</strong>
+          <div id="raceTraits" class="traitlist"></div>
+        </div>
+
+        <div class="box">
+          <strong>Subset</strong>
+          <div class="muted tiny">Appears after selecting a race.</div>
+          <div id="subsetList" class="subset-list"></div>
+        </div>
+
+        <div class="box">
+          <strong>Subset Traits</strong>
+          <div id="subsetTraits" class="traitlist"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="build-special" class="subpanel">
+    <h1>SPECIAL</h1>
+    <div class="special-layout">
+      <div class="special-header">
+        <div class="special-pool"><strong>Points Remaining:</strong> <span id="specialPool">5</span></div>
+      </div>
+      <div id="specialGrid" class="special-grid"></div>
+    </div>
+  </div>
+
+  <div id="build-skills" class="subpanel">
+    <h1>Skills</h1>
+    <div class="muted" style="margin-bottom:8px;">Tag up to your limit. Totals shown are SPECIAL mod + tag bonus (racial/subset mods come next).</div>
+    <div id="skillsList" class="skills-list"></div>
+  </div>
+
+  <div id="build-perks" class="subpanel">
+    <h1>Perks</h1>
+    <div id="perksList" class="perks-list"></div>
+  </div>
+
+</section>
+
+<section id="sheet" class="panel">
+  <h1>Character Sheet</h1>
+
+  <div class="sheet-block">
+    <div><strong>Name:</strong> <span id="sName"></span></div>
+    <div><strong>Level:</strong> <span id="sLevel"></span></div>
+    <div><strong>Age:</strong> <span id="sAge"></span></div>
+    <div><strong>Gender:</strong> <span id="sGender"></span></div>
+  </div>
+
+  <div class="sheet-block">
+    <strong>Background</strong>
+    <pre id="sBg"></pre>
+  </div>
+
+  <div class="sheet-block">
+    <div><strong>Race:</strong> <span id="sRace">—</span></div>
+    <div><strong>Subset:</strong> <span id="sSubset">—</span></div>
+    <div class="race-stats">
+      <div><strong>HP Base:</strong> <span id="sHpBase">—</span></div>
+      <div><strong>DR Base:</strong> <span id="sDrBase">—</span></div>
+    </div>
+  </div>
+
+  <div class="muted">Build ID: <span id="buildId"></span></div>
+</section>
+
+<section id="inventory" class="panel"><h1>Inventory</h1><p class="muted">Coming soon.</p></section>
+<section id="rules" class="panel"><h1>Rules</h1><p class="muted">Coming soon.</p></section>
+<section id="skills" class="tab-panel">
+<h2>Skills</h2>
+<div id="skillsGrid">Skills system initializing…</div>
+</section>
+</main>
+
+<script type="module" src="./app.js?v=phase6_2_7"></script>
+</body>
+</html>

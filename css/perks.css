@@ -1,0 +1,23 @@
+
+.perk-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:10px;
+  border:1px solid #3a5;
+  margin-bottom:6px;
+  background:#051a14;
+}
+
+.perk-card.locked{ opacity:.4; }
+.perk-card.selected{
+  border-color:#6f6;
+  background:#0a2a1d;
+}
+
+.perk-left{ width:180px; }
+.perk-mid{ flex:1; padding:0 10px; }
+
+.perk-name{ font-weight:bold; }
+
+.perk-btn{ min-width:90px; }
